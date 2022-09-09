@@ -1,0 +1,45 @@
+﻿@model Ogrenci
+
+<form method="post" asp-action="Edit">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">
+				Ogrenci Düzenle
+			</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgrenciName"></label>
+			<input asp-for="OgrenciName" class="form-control" />
+			<span asp-validation-for="OgrenciName" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgrenciLastName"></label>
+			<input asp-for="OgrenciLastName" class="form-control" />
+			<span asp-validation-for="OgrenciLastName" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgrenciNo"></label>
+			<input asp-for="OgrenciNo" class="form-control" />
+			<span asp-validation-for="OgrenciNo" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgrenciTc"></label>
+			<input asp-for="OgrenciTc" class="form-control" />
+			<span asp-validation-for="OgrenciTc" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgrenciBirthDate"></label>
+			<input asp-for="OgrenciBirthDate" class="form-control" />
+			<span asp-validation-for="OgrenciBirthDate" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">
+			Düzenle
+		</button>
+		<a asp-controller="Ogrenci" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Listeye Geri Dön
+		</a>
+
+	</div>
+
+</form>

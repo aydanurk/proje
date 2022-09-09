@@ -1,0 +1,41 @@
+﻿@model Ogretmen
+
+<form method="post" asp-action="DeletePOST">
+	<input asp-for="Id" hidden />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">
+				Ogretmen Sil
+			</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgretmenName"></label>
+			<input asp-for="OgretmenName" disabled class="form-control" />
+			
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgretmenLastName"></label>
+			<input asp-for="OgretmenLastName" disabled class="form-control" />
+			
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgretmenTc"></label>
+			<input asp-for="OgretmenTc" disabled class="form-control" />
+
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgretmenBirthDate"></label>
+			<input asp-for="OgretmenBirthDate" disabled class="form-control" />
+
+		</div>
+		<button type="submit" class="btn btn-danger" style="width:150px">
+			Sil
+		</button>
+		<a asp-controller="Ogretmen" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Listeye Geri Dön
+		</a>
+
+	</div>
+
+</form>

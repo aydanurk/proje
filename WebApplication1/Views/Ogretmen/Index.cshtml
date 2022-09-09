@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Ogretmen>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Ogretmen Listesi</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Ogretmen" asp-action="Create" class="btn btn-primary">
+                Yeni Ogretmen Ekle
+            </a>
+
+        </div>
+    </div>
+    <br /><br />
+</div>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Ogretmen Adı
+            </th>
+            <th>
+                Ogretmen Soyadı
+            </th>
+            <th>
+                Ogretmen TC Kimlik
+            </th>
+            <th>
+                Ogretmen Doğum Tarihi
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td width="50%">
+                    @obj.OgretmenName
+                </td>
+                <td width="30%">
+                    @obj.OgretmenLastName
+                </td>
+                <td width="30%">
+                    @obj.OgretmenTc
+                </td>
+                <td width="30%">
+                    @obj.OgretmenBirthDate
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Ogretmen" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+                            Düzenle
+                        </a>
+                        <a asp-controller="Ogretmen" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2">
+                            Sil
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

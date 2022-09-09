@@ -1,0 +1,47 @@
+﻿@model Ogretmen
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">
+				Ogretmen Ekle
+			</h2>
+			<hr />
+		</div>
+		<div class="mb-3">
+			<h6 >Ders Seçiniz</h6>
+			@Html.DropDownListFor(model => model.Id, (IEnumerable<SelectListItem>)ViewBag.v1, "-- Option label --", new { @class = "form-control" })
+		</div>
+		
+		<div class="mb-3">
+			<label asp-for="OgretmenName"></label>
+			<input asp-for="OgretmenName" class="form-control" />
+				<span asp-validation-for="OgretmenName" class="text-danger"></span>
+			</div>
+		
+		<div class="mb-3">
+			<label asp-for="OgretmenLastName"></label>
+			<input asp-for="OgretmenLastName" class="form-control" />
+			<span asp-validation-for="OgretmenLastName" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="OgretmenTc"></label>
+			<input asp-for="OgretmenTc" class="form-control" />
+			<span asp-validation-for="OgretmenTc" class="text-danger"></span>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="OgretmenBirthDate"></label>
+			<input asp-for="OgretmenBirthDate" class="form-control" />
+			<span asp-validation-for="OgretmenBirthDate" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">
+			Ekle
+		</button>
+		<a asp-controller="Ogretmen" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Listeye Geri Dön
+		</a>
+
+	</div>
+
+</form>
